@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.4.0] - 2026-08-03
+
+### Added
+
+- Vercel Web Analytics + Speed Insights instrumentation: installed `@vercel/analytics` and
+  `@vercel/speed-insights`, mounted `<Analytics />` and `<SpeedInsights />` in the root layout
+  (closes #10). Feeds pageview/visitor and Core Web Vitals data into the cross-project
+  `vercel-metrics` pipeline. Enabling the toggle in the Vercel project dashboard is a separate
+  manual follow-up
+
+tag: `v0.4.0`
+
 ## [0.3.1] - 2026-08-03
 
 ### Fixed
