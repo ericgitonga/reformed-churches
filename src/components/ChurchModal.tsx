@@ -39,10 +39,10 @@ export default function ChurchModal({
         >
           &times;
         </button>
-        <h2 id="church-modal-title" className="mb-4 pr-8 text-xl font-semibold">
+        <h2 id="church-modal-title" className="mb-4 pr-8 text-xl font-semibold text-gray-900">
           {church.name}
         </h2>
-        <dl className="space-y-3 text-sm">
+        <dl className="space-y-3 text-sm text-gray-900">
           <div>
             <dt className="font-medium text-gray-500">Location</dt>
             <dd>

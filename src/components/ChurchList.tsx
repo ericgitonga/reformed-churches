@@ -17,7 +17,7 @@ export default function ChurchList({ churches }: { churches: Church[] }) {
               onClick={() => setSelected(church)}
               className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left hover:bg-gray-50 focus:bg-gray-50 focus:outline-none"
             >
-              <span className="font-medium">{church.name}</span>
+              <span className="font-medium text-gray-900">{church.name}</span>
               <span className="text-gray-400" aria-hidden="true">
                 &rarr;
               </span>

@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.3.1] - 2026-08-03
+
+### Fixed
+
+- Color contrast: modal title/address/pastor text and the homepage title/church names were
+  inheriting a CSS variable-based color that goes near-white under `prefers-color-scheme: dark`,
+  washing out against their hardcoded light backgrounds. Labels and links were already fine
+  (explicit colors); gave the remaining text explicit fixed colors too (closes #8)
+
+tag: `v0.3.1`
+
 ## [0.3.0] - 2026-08-03
 
 ### Added
