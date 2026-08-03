@@ -6,6 +6,25 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.3.0] - 2026-08-03
+
+### Added
+
+- Enriched 16 of 17 churches with pastor, website, phone, and/or email via web research
+  (closes #4). Added an `email` field to the church data schema — several churches only had a
+  public email, not a phone number
+- `ChurchModal` now shows both phone and email under "Contact" when available
+
+### Changed
+
+- "Christ Supremacy Church" has no findable web presence — all fields remain `null`
+- "Bethsaida Baptist Church"'s populated data is an educated-guess identity match (the same
+  Embakasi-area Reformed Baptist church is more commonly found online as "Bethzatha"/"Bethesda
+  Baptist Church") — not confirmed, see SKILL.md
+- `placeId` remains `null` for every church — still blocked on a Google Places API key (#5)
+
+tag: `v0.3.0`
+
 ## [0.2.0] - 2026-08-03
 
 ### Added

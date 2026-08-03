@@ -22,13 +22,27 @@ def test_click_church_opens_modal_with_location():
 
 
 def test_modal_omits_fields_with_no_data():
-    # This church's pastor/phone/website are all null in the seed data — the modal must not
-    # render empty/broken rows for them.
+    # Christ Supremacy Church has no enrichment at all (pastor/phone/email/website all null) —
+    # the modal must not render empty/broken rows for any of them.
     with browser_page() as page:
-        modal = _open_modal(page)
+        page.goto("/")
+        page.get_by_role("button", name="Christ Supremacy Church").click()
+        modal = page.get_by_role("dialog")
+        modal.wait_for(state="visible")
         assert modal.get_by_text("Senior Pastor").count() == 0
         assert modal.get_by_text("Contact").count() == 0
         assert modal.get_by_text("Website").count() == 0
+
+
+def test_modal_shows_enriched_fields_when_present():
+    # Cornerstone Baptist Church has a real pastor, email, and website after enrichment (#4).
+    with browser_page() as page:
+        modal = _open_modal(page)
+        assert modal.get_by_text("Senior Pastor").is_visible()
+        assert modal.get_by_text("Phillip Ipala").is_visible()
+        assert modal.get_by_text("Contact").is_visible()
+        assert modal.get_by_role("link", name="omurocho@gmail.com").is_visible()
+        assert modal.get_by_role("link", name="Visit website").is_visible()
 
 
 def test_close_button_closes_modal():
@@ -60,6 +74,7 @@ def test_modal_works_on_mobile_viewport():
 TESTS = [
     test_click_church_opens_modal_with_location,
     test_modal_omits_fields_with_no_data,
+    test_modal_shows_enriched_fields_when_present,
     test_close_button_closes_modal,
     test_backdrop_click_closes_modal,
     test_modal_works_on_mobile_viewport,

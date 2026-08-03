@@ -8,6 +8,7 @@ export type Church = {
   lng: number;
   website: string | null;
   phone: string | null;
+  email: string | null;
   pastor: string | null;
   placeId: string | null;
 };
