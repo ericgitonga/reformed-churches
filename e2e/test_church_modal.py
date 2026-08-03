@@ -45,6 +45,34 @@ def test_modal_shows_enriched_fields_when_present():
         assert modal.get_by_role("link", name="Visit website").is_visible()
 
 
+def test_modal_text_legible_in_dark_mode():
+    # #8: the modal card is a hardcoded light background, but body's text color came from a
+    # CSS variable that goes near-white under prefers-color-scheme: dark, washing out the title
+    # and field values (labels/links stayed legible since they had their own explicit colors).
+    # Check actual computed color, not just a class name, so this catches a regression even if
+    # the fix changes shape later.
+    with browser_page() as page:
+        page.emulate_media(color_scheme="dark")
+        modal = _open_modal(page)
+        # getComputedStyle (and even canvas fillStyle) can return modern wide-gamut color-space
+        # notation (lab()/oklch()) rather than rgb() depending on how the color was authored, and
+        # modern Chromium's canvas now preserves that notation too instead of normalizing it.
+        # Actually painting a pixel and reading it back via getImageData is the one thing that's
+        # always plain 8-bit sRGB regardless of input color space.
+        r, g, b = page.evaluate(
+            """() => {
+                const color = getComputedStyle(document.getElementById('church-modal-title')).color;
+                const canvas = document.createElement('canvas');
+                canvas.width = canvas.height = 1;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = color;
+                ctx.fillRect(0, 0, 1, 1);
+                return Array.from(ctx.getImageData(0, 0, 1, 1).data.slice(0, 3));
+            }"""
+        )
+        assert max(r, g, b) < 100, f"modal title too light against the white card: rgb({r},{g},{b})"
+
+
 def test_close_button_closes_modal():
     with browser_page() as page:
         modal = _open_modal(page)
@@ -75,6 +103,7 @@ TESTS = [
     test_click_church_opens_modal_with_location,
     test_modal_omits_fields_with_no_data,
     test_modal_shows_enriched_fields_when_present,
+    test_modal_text_legible_in_dark_mode,
     test_close_button_closes_modal,
     test_backdrop_click_closes_modal,
     test_modal_works_on_mobile_viewport,

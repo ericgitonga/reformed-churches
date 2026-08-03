@@ -6,6 +6,23 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.3.1] - 2026-08-03
+
+### Fixed
+
+- Color contrast in the modal: title/address/pastor text was inheriting a CSS variable-based
+  color that goes near-white under `prefers-color-scheme: dark`, washing out against the
+  modal's hardcoded-light card. Labels and links were already fine (explicit colors); gave the
+  remaining text a fixed dark color too, since the card itself is always light regardless of
+  system theme (closes #8)
+- Color contrast on the homepage: an initial attempt hardcoded the title/church-name text to
+  the same fixed dark color as the modal — wrong fix, since the homepage's background (unlike
+  the modal's) correctly tracks system theme via that same CSS variable, so hardcoding dark text
+  broke dark mode (dark-on-dark). Corrected with theme-aware `dark:` variants instead, so text
+  and background track the same theme signal together
+
+tag: `v0.3.1`
+
 ## [0.3.0] - 2026-08-03
 
 ### Added
