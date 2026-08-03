@@ -21,12 +21,15 @@ from playwright.sync_api import sync_playwright
 BASE_URL = os.environ.get("BASE_URL", "http://localhost:3000").rstrip("/")
 
 
+MOBILE_VIEWPORT = {"width": 375, "height": 667}
+
+
 @contextmanager
-def browser_page():
+def browser_page(viewport=None):
     with sync_playwright() as p:
         browser = p.chromium.launch()
         try:
-            page = browser.new_page(base_url=BASE_URL)
+            page = browser.new_page(base_url=BASE_URL, viewport=viewport)
             yield page
         finally:
             browser.close()
