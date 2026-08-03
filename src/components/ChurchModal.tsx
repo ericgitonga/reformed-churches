@@ -63,13 +63,20 @@ export default function ChurchModal({
               <dd>{church.pastor}</dd>
             </div>
           )}
-          {church.phone && (
+          {(church.phone || church.email) && (
             <div>
               <dt className="font-medium text-gray-500">Contact</dt>
-              <dd>
-                <a href={`tel:${church.phone}`} className="text-blue-600 hover:underline">
-                  {church.phone}
-                </a>
+              <dd className="space-x-2">
+                {church.phone && (
+                  <a href={`tel:${church.phone}`} className="text-blue-600 hover:underline">
+                    {church.phone}
+                  </a>
+                )}
+                {church.email && (
+                  <a href={`mailto:${church.email}`} className="text-blue-600 hover:underline">
+                    {church.email}
+                  </a>
+                )}
               </dd>
             </div>
           )}
