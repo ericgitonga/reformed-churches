@@ -1,0 +1,189 @@
+[
+  {
+    "id": "cornerstone-baptist-church",
+    "name": "Cornerstone Baptist Church",
+    "address": "QW2G+2PM, Nairobi, Kenya",
+    "lat": -1.2498016,
+    "lng": 36.9264419,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "sovereign-grace-church",
+    "name": "Sovereign Grace Church",
+    "address": "PRM4+GR6, Muthithi Rd, Nairobi",
+    "lat": -1.2661423,
+    "lng": 36.8071087,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "gracepoint-church-thika-road",
+    "name": "Gracepoint Church Thika Road",
+    "address": "ICIPE ROAD next to Cedar Groove Estate, Nairobi",
+    "lat": -1.2277051,
+    "lng": 36.8993869,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "gracepoint-church-limuru",
+    "name": "GracePoint Church Limuru",
+    "address": "Limuru Town.",
+    "lat": -1.1388423,
+    "lng": 36.6372224,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "north-point-baptist-church",
+    "name": "North Point Baptist Church",
+    "address": "Kiambu Rd, Nairobi",
+    "lat": -1.2211448,
+    "lng": 36.8343727,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "upendo-gospel-community-church",
+    "name": "Upendo Gospel Community Church (UGCC)",
+    "address": "QM4G+VJ8, Gitaru",
+    "lat": -1.242869,
+    "lng": 36.6768798,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "gracepoint-church-waiyaki-way",
+    "name": "GracePoint Church Waiyaki Way",
+    "address": "PMWM+W33, Muthiga along Waiyaki Way, Rungiri",
+    "lat": -1.2527348,
+    "lng": 36.6826653,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "gracepoint-church-kikuyu",
+    "name": "GracePoint Church Kikuyu",
+    "address": "Kikuyu - Ondiri Road Kikuyu KE",
+    "lat": -1.2482966,
+    "lng": 36.6612692,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "hope-city-bible-church",
+    "name": "Hope City Bible Church",
+    "address": "QVCJ+386, Thika Road; Next to Garden City Mall, Nairobi",
+    "lat": -1.2298353,
+    "lng": 36.8807791,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "pcea-loresho-community-church",
+    "name": "P C E A Loresho Community Church",
+    "address": null,
+    "lat": -1.2526068,
+    "lng": 36.7513173,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "thika-road-baptist-church",
+    "name": "Thika Road Baptist Church",
+    "address": null,
+    "lat": -1.224196,
+    "lng": 36.88586,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "redeemer-bible-church",
+    "name": "Redeemer Bible Church",
+    "address": null,
+    "lat": -1.330465,
+    "lng": 36.6808484,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "trinity-baptist-church-nairobi",
+    "name": "Trinity Baptist Church Nairobi",
+    "address": null,
+    "lat": -1.2952555,
+    "lng": 36.89332,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "bethsaida-baptist-church",
+    "name": "Bethsaida Baptist Church",
+    "address": null,
+    "lat": -1.3080501,
+    "lng": 36.9005915,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "christ-supremacy-church",
+    "name": "Christ Supremacy Church",
+    "address": null,
+    "lat": -1.266473,
+    "lng": 36.7488154,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "emmanuel-baptist-church",
+    "name": "Emmanuel Baptist Church",
+    "address": null,
+    "lat": -1.2916638,
+    "lng": 36.7611934,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  },
+  {
+    "id": "injili-bible-church",
+    "name": "Injili Bible Church",
+    "address": null,
+    "lat": -1.2824348,
+    "lng": 36.7486546,
+    "website": null,
+    "phone": null,
+    "pastor": null,
+    "placeId": null
+  }
+]
