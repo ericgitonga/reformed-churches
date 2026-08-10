@@ -6,6 +6,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.4.2] - 2026-08-10
+
+### Added
+
+- Vitest unit test suite alongside the existing Playwright e2e suite, per `ONBOARDING.md`'s
+  "Unit tests alongside E2E" convention: `src/lib/churches.test.ts` covers `getChurches`
+  (returns every church, sorted alphabetically, doesn't mutate the source data module) and
+  `mapsUrl` (builds a correct Google Maps search URL). Wired as a required `Unit` status check
+  in `.github/workflows/unit.yml` (closes #17)
+
+tag: `v0.4.2`
+
 ## [0.4.1] - 2026-08-07
 
 ### Changed
