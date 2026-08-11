@@ -6,6 +6,17 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.4.3] - 2026-08-11
+
+### Added
+- ESLint now runs as its own independently-gated CI check (`lint.yml`),
+  alongside `e2e.yml`/`unit.yml` — previously only run manually, so a lint
+  regression that didn't break the build could merge unnoticed. Re-enabled
+  Dependabot vulnerability alerts, which were disabled at the repo level.
+  (closes #19)
+
+tag: `v0.4.3`
+
 ## [0.4.2] - 2026-08-10
 
 ### Added
