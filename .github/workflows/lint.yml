@@ -1,0 +1,22 @@
+name: Lint
+
+# Independently gated so a lint regression can't merge just because it
+# doesn't happen to break the build or fail a test (see issue #19).
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm ci
+
+      - run: npm run lint
