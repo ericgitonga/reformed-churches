@@ -6,6 +6,23 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 adheres to [Semantic Versioning](https://semver.org) (pre-1.0: MINOR = new features/user-facing
 behaviour, PATCH = fixes/docs/housekeeping — see `SKILL.md`).
 
+## [0.4.4] - 2026-08-14
+
+### Security
+- Bumped `next`/`eslint-config-next` from `16.2.12` to `16.3.0`, clearing the `nanoid`/`postcss`/
+  `sharp` transitive advisory cluster bundled via Next.js's build tooling; the remaining
+  `nanoid` advisory was cleared with `npm audit fix` — `npm audit` now reports 0 vulnerabilities
+  (was 4 high)
+- Added baseline HTTP security headers in `next.config.ts`: `X-Frame-Options: DENY`,
+  `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, HSTS
+  (`max-age=63072000; includeSubDomains; preload`), and a CSP scoped to what this static
+  directory site actually loads — self-hosted `next/font/google` fonts and the self-hosted
+  `@vercel/analytics`/`@vercel/speed-insights` scripts, no third-party origins. Verified the
+  full `e2e/` suite still passes against a real build with the new headers/CSP applied. Added a
+  colocated `next.config.test.ts` unit test covering the headers config (closes #24)
+
+tag: `v0.4.4`
+
 ## [0.4.3] - 2026-08-11
 
 ### Added
